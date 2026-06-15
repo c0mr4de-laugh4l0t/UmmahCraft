@@ -10,7 +10,7 @@ const Missions = (() => {
   };
 
   const MISSION_TEXT = {
-    0:  'Talk to Imam Sheikh Hassan at the mosque.',
+    0:  'Talk to Imam Abdurrahman at the mosque.',
     1:  'Find 3 manuscript pages around Parklands.',
     2:  'Return the pages to Imam Sheikh Hassan.',
     3:  'Find Amira and Bilal — tell them about the seminar.',
