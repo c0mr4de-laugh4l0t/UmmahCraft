@@ -4,12 +4,12 @@ const NPC = (() => {
 
   const DIALOGUES = {
     imam: [
-      { speaker: 'Imam Sheikh Hassan', text: 'As-salamu alaykum, my child! I am preparing Friday\'s Khutbah about the Islamic Golden Age — but the wind has scattered my manuscript pages across the neighbourhood!' },
-      { speaker: 'Imam Sheikh Hassan', text: 'If you find all three pages and bring them back, I will show you something truly extraordinary behind this mosque. Something that will change your life forever, insha\'Allah.' },
+      { speaker: 'Imam Abdurrahman', text: 'As-salamu alaykum, my child! I am preparing Friday\'s Khutbah about the Islamic Golden Age — but the wind has scattered my manuscript pages across the neighbourhood!' },
+      { speaker: 'Imam Abdurrahman', text: 'If you find all three pages and bring them back, I will show you something truly extraordinary behind this mosque. Something that will change your life forever, insha\'Allah.' },
     ],
     imam_pages: [
-      { speaker: 'Imam Sheikh Hassan', text: 'SubhanAllah! You found all my pages! JazakAllah khayran. These words are about the scholars of Baghdad — the greatest minds in human history.' },
-      { speaker: 'Imam Sheikh Hassan', text: 'Now look — behind the mosque. Do you see that portal? The Key of Wisdom has opened it. Step through, and you will walk the streets of Baghdad, 830 AD.' },
+      { speaker: 'Imam Abdurrahman', text: 'SubhanAllah! You found all my pages! JazakAllah khayran. These words are about the scholars of Baghdad — the greatest minds in human history.' },
+      { speaker: 'Imam Abdurrahman', text: 'Now look — behind the mimbar. Do you see that portal? The Key of Wisdom has opened it. Step through, and you will walk the streets of Baghdad, 830 AD.' },
     ],
     elder: [
       { speaker: 'Elder Fatuma', text: 'Habari yako, mtoto! You look like a young person with purpose. The Imam needs your help — some pages from his book blew away in the morning wind.' },
