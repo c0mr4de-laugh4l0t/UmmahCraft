@@ -4,6 +4,18 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>UmmahCraft</title>
+  <script>
+    window.onerror = function(msg, src, line) {
+      document.body.style.background = '#000';
+      document.body.innerHTML = '<div style="color:red;font-family:monospace;padding:20px;font-size:16px">'
+        + '<h2>ERROR</h2>'
+        + '<p>' + msg + '</p>'
+        + '<p>File: ' + src + '</p>'
+        + '<p>Line: ' + line + '</p>'
+        + '</div>';
+      return true;
+    };
+  </script>
   <link rel="stylesheet" href="src/style.css"/>
 </head>
 <body>
