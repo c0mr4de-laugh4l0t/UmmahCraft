@@ -188,3 +188,4 @@ const Player = (() => {
       background:rgba(201,162,39,0.8);
       color:#000; font-size:24px; font-weight:700;
       border:none;
+})();
