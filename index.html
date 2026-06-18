@@ -1,50 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UmmahCraft Test</title>
-  <style>
-    body { margin: 0; background: red; }
-    canvas { display: block; }
-  </style>
+  <title>UmmahCraft</title>
+  <link rel="stylesheet" href="src/style.css"/>
 </head>
 <body>
-  <h1 style="color:white;padding:20px">Step 1 — HTML loads ✓</h1>
 
-  <script>
-    document.write('<p style="color:white;padding:20px">Step 2 — inline script works ✓</p>');
-  </script>
+  <!-- TITLE SCREEN -->
+  <div id="title-screen">
+    <div id="title-content">
+      <div id="title-arabic">بِسْمِ اللهِ</div>
+      <h1 id="title-main">UMMAH<span>CRAFT</span></h1>
+      <p id="title-sub">Walk the streets of Parklands.<br>Travel to Baghdad 830 AD.<br>Preserve the Golden Age.</p>
+      <div id="title-location">🇰🇪 Parklands, Nairobi</div>
+      <button id="start-btn">▶ BEGIN JOURNEY</button>
+      <div id="title-controls">
+        WASD to move &nbsp;·&nbsp; Mouse to look &nbsp;·&nbsp; E to interact &nbsp;·&nbsp; ESC to pause
+      </div>
+    </div>
+  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"
-    onload="document.write('<p style=\'color:white;padding:20px\'>Step 3 — Three.js loaded ✓</p>')"
-    onerror="document.write('<p style=\'color:red;padding:20px\'>Step 3 — Three.js FAILED ✗</p>')">
-  </script>
+  <!-- HUD (hidden until game starts) -->
+  <div id="hud" class="hidden">
+    <div id="hud-top">
+      <div id="hud-location">📍 Parklands Mosque, Nairobi</div>
+      <div id="hud-mission">
+        <span id="mission-label">MISSION</span>
+        <span id="mission-text">Talk to Imam Sheikh Hassan</span>
+      </div>
+    </div>
+    <div id="crosshair">+</div>
+    <div id="hud-bottom">
+      <div id="inventory-bar">
+        <div class="inv-slot" id="slot-0"></div>
+        <div class="inv-slot" id="slot-1"></div>
+        <div class="inv-slot" id="slot-2"></div>
+        <div class="inv-slot active" id="slot-3"></div>
+        <div class="inv-slot" id="slot-4"></div>
+        <div class="inv-slot" id="slot-5"></div>
+        <div class="inv-slot" id="slot-6"></div>
+        <div class="inv-slot" id="slot-7"></div>
+        <div class="inv-slot" id="slot-8"></div>
+      </div>
+    </div>
+    <div id="interact-hint" class="hidden">
+      <span>E</span> to interact
+    </div>
+  </div>
 
-  <script src="src/textures.js"
-    onerror="document.write('<p style=\'color:red;padding:20px\'>textures.js FAILED ✗</p>')">
-  </script>
-  <script src="src/world.js"
-    onerror="document.write('<p style=\'color:red;padding:20px\'>world.js FAILED ✗</p>')">
-  </script>
-  <script src="src/npc.js"
-    onerror="document.write('<p style=\'color:red;padding:20px\'>npc.js FAILED ✗</p>')">
-  </script>
-  <script src="src/player.js"
-    onerror="document.write('<p style=\'color:red;padding:20px\'>player.js FAILED ✗</p>')">
-  </script>
-  <script src="src/missions.js"
-    onerror="document.write('<p style=\'color:red;padding:20px\'>missions.js FAILED ✗</p>')">
-  </script>
-  <script src="src/ui.js"
-    onerror="document.write('<p style=\'color:red;padding:20px\'>ui.js FAILED ✗</p>')">
-  </script>
-  <script src="src/game.js"
-    onerror="document.write('<p style=\'color:red;padding:20px\'>game.js FAILED ✗</p>')">
-  </script>
+  <!-- DIALOGUE BOX -->
+  <div id="dialogue-box" class="hidden">
+    <div id="dialogue-speaker"></div>
+    <div id="dialogue-text"></div>
+    <div id="dialogue-prompt">▶ Press E to continue</div>
+  </div>
 
-  <script>
-    document.write('<p style="color:lime;padding:20px">Step 4 — all scripts loaded ✓</p>');
-  </script>
+  <!-- PAUSE MENU -->
+  <div id="pause-menu" class="hidden">
+    <div id="pause-content">
+      <h2>PAUSED</h2>
+      <button onclick="Game.resume()">▶ Resume</button>
+      <button onclick="location.reload()">↩ Main Menu</button>
+    </div>
+  </div>
+
+  <!-- VICTORY SCREEN -->
+  <div id="victory-screen" class="hidden">
+    <div id="victory-content">
+      <div id="victory-arabic">الحمد لله</div>
+      <h2>ALHAMDULILLAH!</h2>
+      <p>You preserved the history of Baghdad<br>and brought the spirit of the Golden Age<br>back to Parklands.</p>
+      <div id="victory-sub">— Mujahid of Knowledge —</div>
+      <button onclick="location.reload()">Play Again</button>
+    </div>
+  </div>
+
+  <!-- GAME CANVAS -->
+  <canvas id="game-canvas"></canvas>
+
+  <!-- THREE.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+  <!-- GAME FILES (order matters) -->
+  <script src="src/textures.js"></script>
+  <script src="src/world.js"></script>
+  <script src="src/npc.js"></script>
+  <script src="src/player.js"></script>
+  <script src="src/missions.js"></script>
+  <script src="src/ui.js"></script>
+  <script src="src/game.js"></script>
+
 </body>
 </html>
